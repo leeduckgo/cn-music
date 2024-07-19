@@ -1,16 +1,30 @@
 <script>
   function redirectToURL() {
-    // Define the URLs for desktop and mobile
-    var desktopURL = "https://wabi-sabi.rootmud.xyz/?template=15090&data=15091";
-    var mobileURL = "https://wabi-sabi.rootmud.xyz/?template=15102&data=15091";
+    // Get the current hostname
+    var hostname = window.location.hostname;
+    
+    // Define the base URLs for desktop and mobile based on the current hostname
+    var baseDesktopURL;
+    var baseMobileURL;
+
+    if (hostname.includes("jue")) {
+      baseDesktopURL = "https://wabi-sabi.rootmud.xyz/?template=15254&data=15256";
+      baseMobileURL = "https://wabi-sabi.rootmud.xyz/?template=15254&data=15256";
+    } else if (hostname.includes("zi")) {
+      baseDesktopURL = "https://zi.cn-music.rootmud.app/?template=15090&data=15091";
+      baseMobileURL = "https://zi.cn-music.rootmud.app/?template=15102&data=15091";
+    } else {
+      baseDesktopURL = "https://wabi-sabi.rootmud.xyz/?template=15239&data=15240";
+      baseMobileURL = "https://wabi-sabi.rootmud.xyz/?template=15239&data=15240";
+    }
 
     // Check if the user's device is mobile
     if (/Mobi|Android/i.test(navigator.userAgent)) {
       // Mobile device
-      window.location.href = mobileURL;
+      window.location.href = baseMobileURL;
     } else {
       // Desktop device
-      window.location.href = desktopURL;
+      window.location.href = baseDesktopURL;
     }
   }
 
