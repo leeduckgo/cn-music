@@ -13,11 +13,16 @@
     } else if (hostname.includes("zi")) {
       baseDesktopURL = "https://wabi-sabi.rootmud.xyz/?template=15257&data=15258";
       baseMobileURL = "https://wabi-sabi.rootmud.xyz/?template=15257&data=15258";
+    } else if (hostname.includes("yu")) {
+      baseDesktopURL = "https://wabi-sabi.rootmud.xyz/?template=15259&data=15260";
+      baseMobileURL = "https://wabi-sabi.rootmud.xyz/?template=15259&data=15260";
     } else {
       baseDesktopURL = "https://wabi-sabi.rootmud.xyz/?template=15239&data=15240";
       baseMobileURL = "https://wabi-sabi.rootmud.xyz/?template=15239&data=15240";
     }
 
+
+    
     // Check if the user's device is mobile
     if (/Mobi|Android/i.test(navigator.userAgent)) {
       // Mobile device
